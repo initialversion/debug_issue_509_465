@@ -5,4 +5,6 @@ class Location < ApplicationRecord
 
   # Validations
 
+  validates :neighborhood, :presence => true
+
 end
