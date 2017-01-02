@@ -5,6 +5,8 @@ class Project < ApplicationRecord
 
   # Validations
 
+  validates :description, :presence => true
+
   validates :location_id, :presence => true
 
   validates :name, :uniqueness => true
