@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Project_skill resource:
+  # CREATE
+  get "/project_skills/new", :controller => "project_skills", :action => "new"
+  post "/create_project_skill", :controller => "project_skills", :action => "create"
+
+  # READ
+  get "/project_skills", :controller => "project_skills", :action => "index"
+  get "/project_skills/:id", :controller => "project_skills", :action => "show"
+
+  # UPDATE
+  get "/project_skills/:id/edit", :controller => "project_skills", :action => "edit"
+  post "/update_project_skill/:id", :controller => "project_skills", :action => "update"
+
+  # DELETE
+  get "/delete_project_skill/:id", :controller => "project_skills", :action => "destroy"
+  #------------------------------
+
   # Routes for the Location resource:
   # CREATE
   get "/locations/new", :controller => "locations", :action => "new"
