@@ -1,6 +1,7 @@
 class ProjectSkillsController < ApplicationController
   def index
-    @project_skills = ProjectSkill.page(params[:page]).per(10)
+    @q = ProjectSkill.ransack(params[:q])
+    @project_skills = @q.result(:distinct => true).includes(:project, :skill).page(params[:page]).per(10)
 
     render("project_skills/index.html.erb")
   end

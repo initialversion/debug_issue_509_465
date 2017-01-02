@@ -1,6 +1,7 @@
 class DaysController < ApplicationController
   def index
-    @days = Day.page(params[:page]).per(10)
+    @q = Day.ransack(params[:q])
+    @days = @q.result(:distinct => true).includes(:projects).page(params[:page]).per(10)
 
     render("days/index.html.erb")
   end

@@ -3,6 +3,166 @@
     Projects
     <a href="/projects/new" class="btn btn-lg btn-success">New Project</a>
   </h1>
+</div><div class="row mb-1">
+  <div class="col-md-12">
+    <%= search_form_for @q, :class => collapse_search_form, :id => "projects_filters" do |f| %>
+      <p class="lead">Narrow results:</p>
+
+        <div class="form-group">
+    <%= f.label :name_cont, "Name contains" %>
+    <%= f.text_field :name_cont, :class => "form-control", :placeholder => "Name contains" %>
+  </div>
+
+<div class="form-group">
+  <%= f.label :number_of_volunteers_required, "Number of volunteers required" %>
+  <div class="row">
+    <div class='col-md-6 mb-1'>
+      <%= f.text_field :number_of_volunteers_required_gteq, :class => "form-control", :placeholder => "Number of volunteers required greater than or equal to" %>
+    </div>
+    <div class='col-md-6'>
+      <%= f.text_field :number_of_volunteers_required_lteq, :class => "form-control", :placeholder => "Number of volunteers required less than or equal to" %>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+    <%= f.label :description_cont, "Description contains" %>
+    <%= f.text_field :description_cont, :class => "form-control", :placeholder => "Description contains" %>
+  </div>
+
+<div class="form-group">
+          <%= f.label :created_at, "Created at" %>
+          <div class="row">
+            <div class='col-md-6 mb-1'>
+              <div class='input-group date' id='created_atgteqPicker'>
+                  <%= f.text_field :created_at_gteq, :class => "form-control", :placeholder => "Created at greater than or equal to" %>
+                  <span class="input-group-addon">
+                      <span class="glyphicon glyphicon-calendar"></span>
+                  </span>
+              </div>
+            </div>
+
+            <div class='col-md-6'>
+              <div class='input-group date' id='created_atlteqPicker'>
+                  <%= f.text_field :created_at_lteq, :class => "form-control", :placeholder => "Created at less than or equal to" %>
+                  <span class="input-group-addon">
+                      <span class="glyphicon glyphicon-calendar"></span>
+                  </span>
+              </div>
+            </div>
+          </div>
+      </div>
+      <script type="text/javascript">
+          $(function () {
+              $('#created_atgteqPicker').datetimepicker({
+                  format: 'YYYY-MM-DD hh:mm:SS'
+              });
+              $('#created_atlteqPicker').datetimepicker({
+                  useCurrent: false,
+                  format: 'YYYY-MM-DD hh:mm:SS'
+              });
+              $('#created_atgteqPicker').on("dp.change", function (e) {
+                  $('#created_atlteqPicker').data("DateTimePicker").minDate(e.date);
+              });
+              $('#created_atlteqPicker').on("dp.change", function (e) {
+                  $('#created_atgteqPicker').data("DateTimePicker").maxDate(e.date);
+              });
+          });
+      </script>
+
+        <div class="form-group">
+          <%= f.label :created_at, "Organization Created at" %>
+          <div class="row">
+            <div class='col-md-6 mb-1'>
+              <div class='input-group date' id='organizationgteqcreated_atPicker'>
+                  <%= f.text_field :organization_created_at_gteq, :class => "form-control", :placeholder => "Organization Created at greater than or equal to" %>
+                  <span class="input-group-addon">
+                      <span class="glyphicon glyphicon-calendar"></span>
+                  </span>
+              </div>
+            </div>
+
+            <div class='col-md-6'>
+              <div class='input-group date' id='organizationlteqcreated_atPicker'>
+                  <%= f.text_field :organization_created_at_lteq, :class => "form-control", :placeholder => "Organization Created at less than or equal to" %>
+                  <span class="input-group-addon">
+                      <span class="glyphicon glyphicon-calendar"></span>
+                  </span>
+              </div>
+            </div>
+          </div>
+      </div>
+      <script type="text/javascript">
+          $(function () {
+              $('#organizationgteqcreated_atPicker').datetimepicker({
+                  format: 'YYYY-MM-DD hh:mm:SS'
+              });
+              $('#organizationlteqcreated_atPicker').datetimepicker({
+                  useCurrent: false,
+                  format: 'YYYY-MM-DD hh:mm:SS'
+              });
+              $('#organizationgteqcreated_atPicker').on("dp.change", function (e) {
+                  $('#organizationlteqcreated_atPicker').data("DateTimePicker").minDate(e.date);
+              });
+              $('#organizationlteqcreated_atPicker').on("dp.change", function (e) {
+                  $('#organizationgteqcreated_atPicker').data("DateTimePicker").maxDate(e.date);
+              });
+          });
+      </script>
+
+<div class="form-group">
+          <%= f.label :day, "Day Day" %>
+          <div class="row">
+            <div class='col-md-6 mb-1'>
+              <div class='input-group date' id='dategteqdayPicker'>
+                  <%= f.text_field :date_day_gteq, :class => "form-control", :placeholder => "Day Day greater than or equal to" %>
+                  <span class="input-group-addon">
+                      <span class="glyphicon glyphicon-calendar"></span>
+                  </span>
+              </div>
+            </div>
+
+            <div class='col-md-6'>
+              <div class='input-group date' id='datelteqdayPicker'>
+                  <%= f.text_field :date_day_lteq, :class => "form-control", :placeholder => "Day Day less than or equal to" %>
+                  <span class="input-group-addon">
+                      <span class="glyphicon glyphicon-calendar"></span>
+                  </span>
+              </div>
+            </div>
+          </div>
+      </div>
+      <script type="text/javascript">
+          $(function () {
+              $('#dategteqdayPicker').datetimepicker({
+                  format: 'MM/DD/YYYY'
+              });
+              $('#datelteqdayPicker').datetimepicker({
+                  useCurrent: false,
+                  format: 'MM/DD/YYYY'
+              });
+              $('#dategteqdayPicker').on("dp.change", function (e) {
+                  $('#datelteqdayPicker').data("DateTimePicker").minDate(e.date);
+              });
+              $('#datelteqdayPicker').on("dp.change", function (e) {
+                  $('#dategteqdayPicker').data("DateTimePicker").maxDate(e.date);
+              });
+          });
+      </script>
+
+<div class="form-group">
+      <%= f.label :location_neighborhood_cont, "Location neighborhood contains" %>
+      <%= f.text_field :location_neighborhood_cont, :class => "form-control", :placeholder => "Location neighborhood contains" %>
+    </div>
+
+      <%= f.submit :class => "btn btn-primary btn-block mb-1" %>
+
+      <a href="/projects" class="btn btn-default btn-block mb-1">Clear filters</a>
+    <% end %>
+    <a class="btn btn-default btn-block mb-1" data-toggle="collapse" href="#projects_filters">
+      Show Filters
+    </a>
+  </div>
 </div>
 
 <div class="row">
