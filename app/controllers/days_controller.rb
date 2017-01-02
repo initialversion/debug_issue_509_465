@@ -1,6 +1,6 @@
 class DaysController < ApplicationController
   def index
-    @days = Day.all
+    @days = Day.page(params[:page]).per(10)
 
     render("days/index.html.erb")
   end

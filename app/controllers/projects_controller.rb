@@ -10,7 +10,7 @@ class ProjectsController < ApplicationController
   end
 
   def index
-    @projects = Project.all
+    @projects = Project.page(params[:page]).per(10)
 
     render("projects/index.html.erb")
   end

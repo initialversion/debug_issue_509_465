@@ -1,6 +1,6 @@
 class ProjectSkillsController < ApplicationController
   def index
-    @project_skills = ProjectSkill.all
+    @project_skills = ProjectSkill.page(params[:page]).per(10)
 
     render("project_skills/index.html.erb")
   end
