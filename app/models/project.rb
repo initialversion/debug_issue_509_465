@@ -1,6 +1,8 @@
 class Project < ApplicationRecord
   # Direct associations
 
+  belongs_to :location
+
   belongs_to :date,
              :class_name => "Day",
              :foreign_key => "day_id"
