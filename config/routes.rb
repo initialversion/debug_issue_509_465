@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Day resource:
+  # CREATE
+  get "/days/new", :controller => "days", :action => "new"
+  post "/create_day", :controller => "days", :action => "create"
+
+  # READ
+  get "/days", :controller => "days", :action => "index"
+  get "/days/:id", :controller => "days", :action => "show"
+
+  # UPDATE
+  get "/days/:id/edit", :controller => "days", :action => "edit"
+  post "/update_day/:id", :controller => "days", :action => "update"
+
+  # DELETE
+  get "/delete_day/:id", :controller => "days", :action => "destroy"
+  #------------------------------
+
   # Routes for the Skill resource:
   # CREATE
   get "/skills/new", :controller => "skills", :action => "new"
