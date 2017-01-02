@@ -1,0 +1,37 @@
+<div class="page-header">
+  <h3>Organization #<%= @organization.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Email</dt>
+      <dd><%= @organization.email %></dd>
+
+      <dt>Password</dt>
+      <dd><%= @organization.password %></dd>
+
+      <dt>Name</dt>
+      <dd><%= @organization.name %></dd>
+
+      <dt>Description</dt>
+      <dd><%= @organization.description %></dd>
+
+      <dt>Website</dt>
+      <dd><%= @organization.website %></dd>
+
+      <dt>Location</dt>
+      <dd><%= @organization.location %></dd>
+
+      <dt>Organization logo</dt>
+      <dd><%= @organization.organization_logo %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/organizations" class="btn btn-primary">
+        Back
+      </a>
+    </div>
+  </div>
+</div>
