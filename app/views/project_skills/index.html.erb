@@ -16,8 +16,20 @@
 
       <% @project_skills.each do |project_skill| %>
       <tr>
-        <td><%= project_skill.project.name %></td>
-        <td><%= project_skill.skill.name %></td>
+        <td>
+          <% if project_skill.project.present? %>
+            <a href="/projects/<%= project_skill.project.id %>">
+              <%= project_skill.project.name %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if project_skill.skill.present? %>
+            <a href="/skills/<%= project_skill.skill.id %>">
+              <%= project_skill.skill.name %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/project_skills/<%= project_skill.id %>" class="btn btn-primary">Show</a>
           <a href="/project_skills/<%= project_skill.id %>/edit" class="btn btn-warning">Edit</a>

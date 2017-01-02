@@ -9,10 +9,22 @@
       <dd><%= @project.name %></dd>
 
       <dt>Location</dt>
-      <dd><%= @project.location_id %></dd>
+      <dd>
+        <% if @project.location.present? %>
+          <a href="/locations/<%= @project.location_id %>">
+            <%= @project.location.neighborhood %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Day</dt>
-      <dd><%= @project.day_id %></dd>
+      <dd>
+        <% if @project.date.present? %>
+          <a href="/days/<%= @project.day_id %>">
+            <%= @project.date.day %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Description</dt>
       <dd><%= @project.description %></dd>
@@ -21,7 +33,13 @@
       <dd><%= @project.number_of_volunteers_required %></dd>
 
       <dt>Organization</dt>
-      <dd><%= @project.organization_id %></dd>
+      <dd>
+        <% if @project.organization.present? %>
+          <a href="/organizations/<%= @project.organization_id %>">
+            <%= @project.organization.created_at %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 

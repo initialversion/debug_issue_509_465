@@ -21,11 +21,29 @@
       <% @projects.each do |project| %>
       <tr>
         <td><%= project.name %></td>
-        <td><%= project.location.neighborhood %></td>
-        <td><%= project.date.day %></td>
+        <td>
+          <% if project.location.present? %>
+            <a href="/locations/<%= project.location.id %>">
+              <%= project.location.neighborhood %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if project.date.present? %>
+            <a href="/days/<%= project.date.id %>">
+              <%= project.date.day %>
+            </a>
+          <% end %>
+        </td>
         <td><%= project.description %></td>
         <td><%= project.number_of_volunteers_required %></td>
-        <td><%= project.organization.created_at %></td>
+        <td>
+          <% if project.organization.present? %>
+            <a href="/organizations/<%= project.organization.id %>">
+              <%= project.organization.created_at %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/projects/<%= project.id %>" class="btn btn-primary">Show</a>
           
