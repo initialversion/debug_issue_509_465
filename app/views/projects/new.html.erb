@@ -69,7 +69,7 @@
           Organization
         </label>
 
-        <input type="text" id="organization_id" name="organization_id" placeholder="Organization" class="form-control" value="<%= @project.organization_id %>">
+        <%= select_tag(:organization_id, options_from_collection_for_select(Organization.all, :id, :created_at, @project.organization_id), :class => "form-control") %>
       </div>
 
       <button class="btn btn-success">
