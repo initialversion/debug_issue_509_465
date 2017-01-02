@@ -1,6 +1,10 @@
 class Project < ApplicationRecord
   # Direct associations
 
+  belongs_to :date,
+             :class_name => "Day",
+             :foreign_key => "day_id"
+
   has_many   :project_skills,
              :dependent => :destroy
 
