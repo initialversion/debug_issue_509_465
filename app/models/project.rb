@@ -1,6 +1,9 @@
 class Project < ApplicationRecord
   # Direct associations
 
+  has_many   :project_skills,
+             :dependent => :destroy
+
   belongs_to :organization
 
   # Indirect associations
