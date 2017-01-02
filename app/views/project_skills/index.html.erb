@@ -16,7 +16,7 @@
 
       <% @project_skills.each do |project_skill| %>
       <tr>
-        <td><%= project_skill.project_id %></td>
+        <td><%= project_skill.project.name %></td>
         <td><%= project_skill.skill_id %></td>
         <td>
           <a href="/project_skills/<%= project_skill.id %>" class="btn btn-primary">Show</a>
