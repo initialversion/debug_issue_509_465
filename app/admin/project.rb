@@ -1,5 +1,7 @@
 ActiveAdmin.register Project do
 
+ permit_params :name, :location_id, :day_id, :description, :number_of_volunteers_required, :organization_id
+
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
