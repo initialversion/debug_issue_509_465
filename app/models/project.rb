@@ -5,6 +5,8 @@ class Project < ApplicationRecord
 
   # Validations
 
+  validates :day_id, :presence => true
+
   validates :description, :presence => true
 
   validates :location_id, :presence => true
