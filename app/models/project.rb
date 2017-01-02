@@ -5,4 +5,6 @@ class Project < ApplicationRecord
 
   # Validations
 
+  validates :organization_id, :presence => true
+
 end
