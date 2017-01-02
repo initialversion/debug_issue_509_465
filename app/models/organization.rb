@@ -5,6 +5,8 @@ class Organization < ApplicationRecord
 
   # Validations
 
+  validates :location, :presence => true
+
   validates :name, :uniqueness => true
 
   validates :name, :presence => true
