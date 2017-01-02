@@ -25,7 +25,7 @@
         <td><%= project.date.day %></td>
         <td><%= project.description %></td>
         <td><%= project.number_of_volunteers_required %></td>
-        <td><%= project.organization_id %></td>
+        <td><%= project.organization.created_at %></td>
         <td>
           <a href="/projects/<%= project.id %>" class="btn btn-primary">Show</a>
           <a href="/projects/<%= project.id %>/edit" class="btn btn-warning">Edit</a>
