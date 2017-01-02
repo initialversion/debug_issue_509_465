@@ -6,6 +6,7 @@ class DaysController < ApplicationController
   end
 
   def show
+    @project = Project.new
     @day = Day.find(params[:id])
 
     render("days/show.html.erb")

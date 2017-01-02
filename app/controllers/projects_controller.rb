@@ -16,6 +16,7 @@ class ProjectsController < ApplicationController
   end
 
   def show
+    @project_skill = ProjectSkill.new
     @project = Project.find(params[:id])
 
     render("projects/show.html.erb")

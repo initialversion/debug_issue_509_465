@@ -51,6 +51,29 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_project_skill" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for project_id -->
+      <div class="form-group">
+        <label for="project_id" class="control-label">
+          Project
+        </label>
+
+        <%= select_tag(:project_id, options_from_collection_for_select(Project.all, :id, :name), :class => "form-control") %>
+      </div>
+
+      <!-- Label and input for skill_id -->
+      <input type="hidden" name="skill_id" value="<%= @skill.id %>">
+
+      <button class="btn btn-block btn-success">
+        Create Project Skill
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>
